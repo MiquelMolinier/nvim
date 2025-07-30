@@ -1,7 +1,2 @@
 require("miquel.core.options")
 require("miquel.core.keymaps")
-require("miquel.core.floating_terminal")
-require("miquel.core.status_bar")
-require("miquel.core.enhanced_tabs")
-require("miquel.core.formatting")
-require("miquel.core.lsp")

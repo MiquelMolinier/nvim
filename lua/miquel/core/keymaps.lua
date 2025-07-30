@@ -78,10 +78,10 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move right window" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom  window" })
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move right window" })
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom  window" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
 -- Tab management
@@ -114,9 +114,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- Copy
 
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set("n","Y","y$",{desc="Yank to end of line"})
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], {desc="Yank to clipb"})
+vim.keymap.set("n", "<leader>Y", [["+Y]], {desc="Yank eol to clipb"})
+vim.keymap.set("n","Y","y$",{desc="Yank to end of line", noremap=false})
 
 -- Delete
 
@@ -168,29 +168,3 @@ vim.api.nvim_create_autocmd("VimResized",{
   end,
 })
 
--- LSP keymaps 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(event)
-    local opts = {buffer = event.buf}
-
-    -- Navigation
-    vim.keymap.set('n', 'gD', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'gs', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-
-    -- Information
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-
-    -- Code actions
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-
-    -- Diagnostics
-    vim.keymap.set('n', '<leader>nd', vim.diagnostic.goto_next, opts)
-    vim.keymap.set('n', '<leader>pd', vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
-  end,
-})
