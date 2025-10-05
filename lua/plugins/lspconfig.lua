@@ -318,9 +318,12 @@ return {
             "prettier",
             "latexindent",
             "xmlformatter",
+            "sqlfmt",
+            "sql-formatter",
             -- Linting
             "shellcheck",
             "markdownlint",
+            "sqlfluff",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
         -- vim.lsp.config("clangd", { capabilities = { offsetEncoding = { "utf-8", "utf-16", "utf-32" } } })

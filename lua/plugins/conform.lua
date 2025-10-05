@@ -38,6 +38,8 @@ return {
                 markdown = { "markdownlint" },
                 tex = { "latexindent" },
                 xml = { "xmlformatter" },
+                -- sql = { "sqlfmt", "sql_formatter" },
+                sql = { "sqlfmt" },
                 -- Conform can also run multiple formatters sequentially
                 -- python = { "isort", "black" },
                 --
