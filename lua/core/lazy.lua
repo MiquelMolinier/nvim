@@ -53,6 +53,7 @@ require("lazy").setup({
         require("plugins.render-markdown"),
         require("plugins.bufferline"),
         require("plugins.vimtex"),
+        require("plugins.vim-jukit"),
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.

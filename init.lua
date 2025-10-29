@@ -6,6 +6,13 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 })
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+-- python
+local python = "" --[[ vim.cmd("pyenv which python") ]]
+if python == "" then
+    python = vim.fn.expand("/home/miquel/.local/opt/pyenv/versions/3.12.11/envs/neovim/bin/python")
+end
+vim.g.python3_host_prog = python
+vim.g.jukit_mappings = 0
 require("core")
 require("utils.highligths")
 -- BUG: strikethrough apparently does not work in any terminal
