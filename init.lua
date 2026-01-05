@@ -26,8 +26,8 @@ if false then
 end
 -- local all = vim.api.nvim_get_hl(0, {})
 -- for name, _ in pairs(all) do
---     vim.api.nvim_set_hl(0, name, {})
---     -- if string.find(name, ".*Signature.*", 1, false) then
---     --     vim.print(name, _)
---     -- end
+--     -- vim.api.nvim_set_hl(0, name, { bg = "#FFFFFF" })
+--     if string.find(name, ".*NvimTree.*", 1, false) then
+--         vim.print(name, _)
+--     end
 -- end

@@ -41,6 +41,11 @@ vim.keymap.set(
     "<C-d>",
     { silent = true, noremap = true, desc = "Reverse tab in insert mode" }
 )
+--
+vim.keymap.set("n", "<M-=>", "<CMD>vertical resize +5<CR>")
+vim.keymap.set("n", "<M-->", "<CMD>vertical resize -5<CR>")
+vim.keymap.set("n", "<M-,>", "<CMD>resize +5<CR>")
+vim.keymap.set("n", "<M-.>", "<CMD>resize -5<CR>")
 -- Movement in document
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half page up (centered)" })

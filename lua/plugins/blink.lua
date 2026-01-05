@@ -1,5 +1,6 @@
 return {
     "saghen/blink.cmp",
+    -- enabled = false,
     event = "VimEnter",
     version = "1.*",
     dependencies = {
@@ -84,6 +85,7 @@ return {
             documentation = { auto_show = false, auto_show_delay_ms = 500 },
             -- Don't select by default, auto insert on selection
             list = { selection = { preselect = false, auto_insert = true } },
+            menu = { border = "rounded" },
         },
 
         sources = {
@@ -98,7 +100,8 @@ return {
                         trailing_slash = true,
                         label_trailing_slash = true,
                         get_cwd = function(context)
-                            return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
+                            -- return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
+                            return vim.fn.getcwd()
                         end,
                         show_hidden_files_by_default = true,
                         -- Treat `/path` as starting from the current working directory (cwd) instead of the root of your filesystem
@@ -119,6 +122,6 @@ return {
         fuzzy = { implementation = "lua" },
 
         -- Shows a signature help window while you type arguments for a function
-        signature = { enabled = true },
+        signature = { enabled = true, window = { border = "rounded" } },
     },
 }

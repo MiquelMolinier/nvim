@@ -16,7 +16,7 @@ local fix_opts_hl = function(hl_name, umbral, swap, chfg)
             fg = theme and color_tools.change_hex_lightness(fg, -chlight)
                 or color_tools.change_hex_lightness(fg, chlight)
         else
-            fg = theme and "#000000" or "#ffffff"
+            fg = theme and "#FFFFFF" or "#ffffff"
         end
         bg = theme and color_tools.change_hex_lightness(bg, 35)
             or color_tools.change_hex_lightness(bg, -35)
@@ -25,7 +25,7 @@ local fix_opts_hl = function(hl_name, umbral, swap, chfg)
             fg = theme and color_tools.change_hex_lightness(fg, chlight)
                 or color_tools.change_hex_lightness(fg, -chlight)
         else
-            fg = theme and "#ffffff" or "#000000"
+            fg = theme and "#ffffff" or "#FFFFFF"
         end
         bg = theme and color_tools.change_hex_lightness(bg, -5)
             or color_tools.change_hex_lightness(bg, 5)
@@ -37,7 +37,7 @@ vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none", fg = "none" })
-vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "none" })
+vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none", fg = "#FFFFFF" })
 vim.api.nvim_set_hl(0, "FloatShadow", { bg = "none", fg = "none" })
 vim.api.nvim_set_hl(0, "FloatShadowThrough", { bg = "none" })
 vim.api.nvim_set_hl(0, "TabLineFill", {})
@@ -67,3 +67,9 @@ vim.api.nvim_set_hl(0, "TelescopeMatching", { link = "Cursor" })
 vim.api.nvim_set_hl(0, "LspReferenceText", fix_opts_hl("Visual", 40, true, false))
 vim.api.nvim_set_hl(0, "Whitespace", { link = "Normal" })
 vim.api.nvim_set_hl(0, "RenderMarkdownCodeInline", { link = "Visual" })
+vim.api.nvim_set_hl(0, "DiagnosticWarn", {})
+-- blink
+vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { fg = "#FFFFFF", bg = "none" })
+vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { fg = "#FFFFFF", bg = "none" })
+vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpBorder", { fg = "#FFFFFF", bg = "none" })
+vim.api.nvim_set_hl(0, "BlinkCmpMenu", { fg = "none", bg = "none" })
