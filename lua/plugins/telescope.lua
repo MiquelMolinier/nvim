@@ -1,6 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    -- branch = "0.1.x",
+    -- tag = "*",
     event = "VimEnter",
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -96,7 +97,13 @@ return {
             { desc = '[f]ind Recent Files ("." for repeat)' }
         )
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[f]ind existing [b]uffers" })
-        vim.keymap.set("n", "<leader>ft", "<CMD>TodoTelescope<CR>", { desc = "[f]ind [t]odos" })
+
+        vim.keymap.set(
+            "n",
+            "<leader>ftt",
+            "<CMD>TodoTelescope keywords=TODO,FIX<CR>",
+            { desc = "Find todo and fix comments" }
+        )
 
         -- Slightly advanced example of overriding default behavior and theme
         vim.keymap.set("n", "<leader>/", function()

@@ -1,7 +1,7 @@
 return {
     "rmagatti/auto-session",
     lazy = false,
-    priority = 900,
+    priority = 500,
     config = function()
         local auto_session = require("auto-session")
         local opts = {

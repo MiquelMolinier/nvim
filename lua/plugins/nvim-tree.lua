@@ -16,9 +16,9 @@ return {
             view = {
                 width = 35,
                 relativenumber = true,
-                float = {
-                    enable = true,
-                },
+                -- float = {
+                --     enable = true,
+                -- },
             },
             -- change folder arrow icons
             renderer = {
@@ -51,6 +51,31 @@ return {
             git = {
                 ignore = false,
             },
+            on_attach = function(bufnr)
+                local api = require("nvim-tree.api")
+                local function opts(desc)
+                    return {
+                        desc = "nvim-tree: " .. desc,
+                        buffer = bufnr,
+                        noremap = true,
+                        silent = true,
+                        nowait = true,
+                    }
+                end
+                -- default mappings
+                api.map.on_attach.default(bufnr)
+                -- custom mappings
+                vim.keymap.set(
+                    "n",
+                    "R",
+                    -- "<CMD>Lazy reload nvim-tree.lua<CR>",
+                    function()
+                        vim.cmd("Lazy reload nvim-tree.lua")
+                        vim.cmd("NvimTreeToggle")
+                    end,
+                    opts("Reload plugin")
+                )
+            end,
         }
         nvimtree.setup(opts)
         vim.keymap.set(

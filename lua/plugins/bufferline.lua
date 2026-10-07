@@ -1,8 +1,9 @@
 return {
     "akinsho/bufferline.nvim",
-    keys = {
-        { "<leader>to", "<cmd>tabnew<CR>", "n", desc = "Open new tab" },
-    },
+    priority = 750,
+    -- keys = {
+    --     { "<leader>to", "<cmd>tabnew<CR>", "n", desc = "Open new tab" },
+    -- },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     version = "*",
     config = function()

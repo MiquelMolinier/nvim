@@ -1,15 +1,18 @@
-vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
+-- vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
+-- vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')
+-- vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
+-- vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set(
     "t",
     "<leader><Esc>",
     "<C-\\><C-n>",
     { desc = "End terminal mode", silent = true, noremap = true }
 )
-vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = "New line below in normal mode" })
-vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = "New line above in normal mode" })
+-- vim.keymap.set("n", "<leader>o", "o<ESC>", { desc = "New line below in normal mode" })
+-- vim.keymap.set("n", "<leader>O", "O<ESC>", { desc = "New line above in normal mode" })
+vim.keymap.set("n", "<leader>ow", function()
+    vim.opt.wrap = not vim.opt.wrap:get()
+end, { desc = "Toggle wrap" })
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
@@ -104,3 +107,14 @@ vim.keymap.set(
     [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
     { desc = "Find string and replace" }
 )
+vim.keymap.set("n", "<leader>v", function()
+    -- local value = vim.opt.virtualedit
+    local ve = vim.opt.virtualedit:get()
+    if vim.tbl_contains(ve, "all") then
+        vim.opt.virtualedit = { "block" }
+    else
+        vim.opt.virtualedit = { "all" }
+    end
+    -- value = (value == "block" and "all") or "block"
+    -- vim.opt.virtualedit = value
+end)

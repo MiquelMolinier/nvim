@@ -6,10 +6,11 @@ return {
         -- Configure vim-jukit
         local ipython = string.gsub(vim.fn.system("pyenv which ipython"), "\n", " ")
         if ipython:find("command not found") then
-            ipython = "/home/miquel/.local/opt/pyenv/versions/3.12.11/envs/neovim/bin/ipython"
+            ipython = "~/.local/opt/pyenv/versions/3.12.11/envs/neovim/bin/ipython"
         end
         -- Setup
         vim.g.jukit_shell_cmd = ipython
+        vim.g.jukit_terminal = "nvimterm"
         vim.g.jukit_mappings_ext = { "python", "*.ipynb" }
         vim.g.jukit_layout = {
             split = "horizontal",

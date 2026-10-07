@@ -9,7 +9,7 @@ vim.g.maplocalleader = "\\"
 -- python
 local python = "" --[[ vim.cmd("pyenv which python") ]]
 if python == "" then
-    python = vim.fn.expand("/home/miquel/.local/opt/pyenv/versions/3.12.11/envs/neovim/bin/python")
+    python = vim.fn.expand("~/.local/opt/pyenv/versions/3.12.11/envs/neovim/bin/python")
 end
 vim.g.python3_host_prog = python
 vim.g.jukit_mappings = 0
@@ -17,17 +17,17 @@ require("core")
 require("utils.highligths")
 -- BUG: strikethrough apparently does not work in any terminal
 -- BUG: Scope only takes the first color in highlight
-if false then
-    vim.api.nvim_err_writeln("Error when finding references: " .. "Hola")
-    hooks.register(nil, nil)
-    if true then
-        print("another scope")
-    end
-end
+-- if false then
+--     vim.api.nvim_err_writeln("Error when finding references: " .. "Hola")
+--     hooks.register(nil, nil)
+--     if true then
+--         print("another scope")
+--     end
+-- end
 -- local all = vim.api.nvim_get_hl(0, {})
 -- for name, _ in pairs(all) do
---     -- vim.api.nvim_set_hl(0, name, { bg = "#FFFFFF" })
---     if string.find(name, ".*NvimTree.*", 1, false) then
---         vim.print(name, _)
+--     if string.find(name, ".*Blink.*", 1, false) then
+--         vim.api.nvim_set_hl(0, name, { bg = "none", fg = "#FFFFFF" })
+--         -- vim.print(name, _)
 --     end
 -- end

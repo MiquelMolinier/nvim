@@ -1,6 +1,7 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     lazy = true,
+    enabled = true,
     event = { "BufReadPre", "BufNewFile" },
     main = "ibl",
     dependencies = { "nvim-treesitter/nvim-treesitter", "HiPhish/rainbow-delimiters.nvim" },
@@ -14,7 +15,7 @@ return {
             -- whitespace = { highlight = { "Cleared" } },
             indent = {
                 repeat_linebreak = true,
-                priority = 1024,
+                priority = 1500,
                 char = "┆",
                 highlight = highlight,
                 smart_indent_cap = true,

@@ -1,5 +1,6 @@
 return {
     "uZer/pywal16.nvim",
+    enabled = false,
     lazy = false,
     priority = 3000,
     -- for local dev replace with:
