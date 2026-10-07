@@ -68,7 +68,7 @@ return {
             enabled = true,
             completion = {
                 list = { selection = { preselect = false, auto_insert = false } },
-                menu = { auto_show = true },
+                menu = { auto_show = false },
             },
         },
         appearance = {

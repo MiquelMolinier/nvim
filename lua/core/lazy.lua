@@ -31,8 +31,9 @@ require("lazy").setup({
     spec = {
         -- import your plugins
         require("plugins.init"),
+        require("plugins.catppuccin"),
         require("plugins.nvim-treesitter"),
-        require("plugins.pywal16"),
+        -- require("plugins.pywal16"),
         require("plugins.auto-session"),
         require("plugins.nvim-web-devicons"),
         require("plugins.nvim-tree"),
@@ -54,6 +55,8 @@ require("lazy").setup({
         require("plugins.bufferline"),
         require("plugins.vimtex"),
         require("plugins.vim-jukit"),
+        require("plugins.copilot"),
+        require("plugins.nvim-colorizer"),
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
